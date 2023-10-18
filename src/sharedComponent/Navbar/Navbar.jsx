@@ -5,7 +5,7 @@ const Navbar = () => {
         <div className="max-w-screen-xl mx-auto px-8 md:px-16 my-10" >
             <nav className="shadow-lg rounded-md flex flex-col md:flex-row flex-wrap justify-between items-center px-4 py-6" >
 
-                {/* empty div  */}
+                {/* logo */}
                 <div>
                     <img className="w-24 md:w-28 lg:w-32" src="https://i.ibb.co/ysBDRfB/logo.png" alt="" />
                 </div>
