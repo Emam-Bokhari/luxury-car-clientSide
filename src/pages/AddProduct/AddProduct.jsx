@@ -14,7 +14,7 @@ const AddProduct = () => {
         const productDescription=form.productDescription.value
 
         const addProduct={name,brandName,type,rating,price,photoURL,productDescription}
-        console.log(addProduct);
+        // console.log(addProduct);
         // reset input field
         form.reset()
 

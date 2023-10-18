@@ -3,6 +3,7 @@ import MainLayout from "../layout/MainLayout";
 import Home from './../pages/Home/Home';
 import AddProduct from './../pages/AddProduct/AddProduct';
 import MyCart from './../pages/MyCart/MyCart';
+import Product from "../Product/Product";
 
 const Router = createBrowserRouter([
     {
@@ -11,7 +12,7 @@ const Router = createBrowserRouter([
         children: [
             {
                 path: "/",
-                loader:()=>fetch("./brandsData.json"),
+                loader: () => fetch("../brandsData.json"),
                 element: <Home />
             },
             {
@@ -21,6 +22,11 @@ const Router = createBrowserRouter([
             {
                 path: "/myCart",
                 element: <MyCart />
+            },
+            {
+                path: "/product/:brandName",
+                loader:()=>fetch("http://localhost:3000/products"),
+                element: <Product />
             }
         ]
     }
