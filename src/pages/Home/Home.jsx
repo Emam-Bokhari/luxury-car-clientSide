@@ -1,8 +1,11 @@
+import Banner from "../../components/Banner/Banner";
 
 const Home = () => {
     return (
         <div className="max-w-screen-xl mx-auto px-8 md:px-16 my-10" >
-            <h2>Home page</h2>
+
+            {/* Banner */}
+            <Banner />
         </div>
     );
 };
