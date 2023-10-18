@@ -10,9 +10,11 @@ const Product = () => {
     console.log(filteredProducts);
 
     return (
-        <div>
-            {filteredProducts.map((item,index) => <DisplayProduct key={index} data={item} />)}
+       <div className="max-w-screen-xl mx-auto px-8 md:px-16 my-10 " >
+         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" >
+            {filteredProducts?.map((item,index) => <DisplayProduct key={index} data={item} />)}
         </div>
+       </div>
     );
 };
 
