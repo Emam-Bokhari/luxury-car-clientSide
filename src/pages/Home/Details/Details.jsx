@@ -23,7 +23,7 @@ const Details = () => {
     .then(data=>{
         console.log(data);
     })
-    console.log(addToCart);
+    // console.log(addToCart);
    }
     return (
         <div className="max-w-screen-xl mx-auto px-8 md:px-16 my-10" >
