@@ -1,9 +1,9 @@
 import { useLoaderData } from "react-router-dom";
 import {AiOutlineShoppingCart} from "react-icons/ai"
-
 const Details = () => {
 
     const detailsData = useLoaderData()
+
     // console.log(detailsData);
     const { name, brandName, type, rating, photoURL, price, productDescription
     } = detailsData || {}
@@ -12,7 +12,7 @@ const Details = () => {
     // console.log(addToCart);
     
    const handleAddToCart=()=>{
-    fetch("http://localhost:3000/cart",{
+    fetch("https://luxury-car-self.vercel.app/cart",{
         method:'POST',
         headers:{
             'content-type':'application/json'
@@ -22,6 +22,9 @@ const Details = () => {
     .then(res=>res.json())
     .then(data=>{
         console.log(data);
+        if(data.insertedId){
+            alert('product add successfully!')
+        }
     })
     // console.log(addToCart);
    }

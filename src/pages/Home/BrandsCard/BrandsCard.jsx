@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-
 const BrandsCard = ({ data }) => {
     // console.log(data);
     const { brand_name, pic } = data || {}
@@ -9,6 +8,7 @@ const BrandsCard = ({ data }) => {
         <div>
 
             <Link to={`/product/${brand_name}`} >
+                
                 <div>
                     <div className="rounded-md p-4  shadow-lg space-y-2" >
 

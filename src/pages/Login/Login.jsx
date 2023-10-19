@@ -8,6 +8,8 @@ const Login = () => {
     const [showPassword, setShowPassword] = useState(false)
     const { signin, googleSignin } = useContext(AuthContext)
 
+    console.log(googleSignin);
+
     const navigate = useNavigate()
 
     const handleSignin = (event) => {

@@ -2,36 +2,36 @@ import toast from "react-hot-toast";
 
 
 const AddProduct = () => {
-    const handleAddProduct=(event)=>{
+    const handleAddProduct = (event) => {
         event.preventDefault()
-        const form=event.target 
-        const name=form.name.value 
-        const brandName=form.brandName.value
-        const type=form.type.value
-        const rating=form.rating.value
-        const price=form.price.value
-        const photoURL=form.photoURL.value
-        const productDescription=form.productDescription.value
+        const form = event.target
+        const name = form.name.value
+        const brandName = form.brandName.value
+        const type = form.type.value
+        const rating = form.rating.value
+        const price = form.price.value
+        const photoURL = form.photoURL.value
+        const productDescription = form.productDescription.value
 
-        const addProduct={name,brandName,type,rating,price,photoURL,productDescription}
+        const addProduct = { name, brandName, type, rating, price, photoURL, productDescription }
         // console.log(addProduct);
         // reset input field
         form.reset()
 
-        fetch("http://localhost:3000/product",{
-            method:'POST',
-            headers:{
-                'content-type':'application/json'
+        fetch("https://luxury-car-self.vercel.app/products", {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
             },
-            body:JSON.stringify(addProduct)
+            body: JSON.stringify(addProduct)
         })
-        .then(res=>res.json())
-        .then(data=>{
-            console.log(data)
-            if(data.insertedId){
-                toast.success('Product has been added successfully')
-            }
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.insertedId) {
+                    toast.success('Product has been added successfully')
+                }
+            })
     }
     return (
         <div className="max-w-screen-xl mx-auto px-8 md:px-16 my-10" >
@@ -46,21 +46,33 @@ const AddProduct = () => {
             <div className="bg-[#F3F3F3] p-6  my-5" >
 
                 <form onSubmit={handleAddProduct} >
-                    {/* name and brand name */}
+                    {/* name and type */}
                     <div className="flex flex-col md:flex-row gap-5 my-5 " >
                         <div className="flex-1" >
                             <input className="bg-white p-2 rounded-sm w-full outline-none" type="text" name="name" placeholder="Name" />
                         </div>
 
                         <div className="flex-1" >
-                            <input className="bg-white w-full p-2 rounded-sm outline-none" type="text" name="brandName" placeholder="Brand Name" />
+                            <input className="bg-white p-2 rounded-sm w-full outline-none" type="text" name="type" placeholder="Type" />
+
                         </div>
                     </div>
 
-                    {/* type and rating */}
+                    {/* brand name and rating */}
                     <div className="flex flex-col md:flex-row  gap-5 my-5" >
                         <div className="flex-1" >
-                            <input className="bg-white p-2 rounded-sm w-full outline-none" type="text" name="type" placeholder="Type" />
+
+                            <select className="bg-white w-full p-2 rounded-sm outline-none" name="brandName">
+                                <option value="" disabled selected hidden>
+                                    Select a brand
+                                </option>
+                                <option value="BMW" >BMW</option>
+                                <option value="Ford">Ford</option>
+                                <option value="Honda">Honda</option>
+                                <option value="Tesla">Tesla</option>
+                                <option value="Mercedes Benz">Mercedes Benz</option>
+                                <option value="Toyota">Toyota</option>
+                            </select>
                         </div>
 
                         <div className="flex-1" >
