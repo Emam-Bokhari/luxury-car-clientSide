@@ -8,6 +8,7 @@ import Details from "../pages/Home/Details/Details";
 import Login from "../pages/Login/Login";
 import SignUp from "../pages/SignUp/SignUp";
 import Update from "../pages/Update/Update";
+import PrivateRoute from './../PrivateRoute/PrivateRoute';
 
 const Router = createBrowserRouter([
     {
@@ -21,12 +22,12 @@ const Router = createBrowserRouter([
             },
             {
                 path: "/addProduct",
-                element: <AddProduct />
+                element: <PrivateRoute><AddProduct /></PrivateRoute>
             },
             {
                 path: "/myCart",
                 loader: () => fetch("https://luxury-car-self.vercel.app/cart"),
-                element: <MyCart />
+                element: <PrivateRoute><MyCart /></PrivateRoute>
             },
             {
                 path: "/product/:brandName",
@@ -36,7 +37,7 @@ const Router = createBrowserRouter([
             {
                 path: "/details/:id",
                 loader: ({ params }) => fetch(`https://luxury-car-self.vercel.app/products/${params.id}`),
-                element: <Details />
+                element: <PrivateRoute><Details /></PrivateRoute>
             },
             {
                 path: "/login",
@@ -49,7 +50,7 @@ const Router = createBrowserRouter([
             {
                 path: "/update/:id",
                 loader:({params})=>fetch(`https://luxury-car-self.vercel.app/products/${params.id}`),
-                element: <Update />
+                element: <PrivateRoute><Update /></PrivateRoute>
             }
         ]
     }

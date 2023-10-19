@@ -1,7 +1,8 @@
 
 const Banner = () => {
     return (
-        <div className="relative" >
+<div className="max-w-screen-xl mx-auto px-8 md:px-16 my-10" >
+<div className="relative" >
             <div >
 
                 {/* banner image */}
@@ -21,6 +22,7 @@ const Banner = () => {
                 </p>
             </div>
         </div>
+</div>
     );
 };
 

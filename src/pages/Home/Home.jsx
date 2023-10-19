@@ -2,12 +2,13 @@ import { useLoaderData } from "react-router-dom";
 import Banner from "../../components/Banner/Banner";
 import Brands from "./Brands/Brands";
 import ContactUs from "../../components/ContactUs/ContactUs";
+import Footer from "../../components/Footer/Footer";
 
 const Home = () => {
     const brandsData = useLoaderData()
     // console.log(brandsData);
     return (
-        <div className="max-w-screen-xl mx-auto px-8 md:px-16 my-10" >
+        <div className="" >
 
             {/* Banner */}
             <div>
@@ -21,6 +22,9 @@ const Home = () => {
 
             {/* Contact Us */}
             <ContactUs />
+
+            {/* Footer */}
+            <Footer />
 
 
         </div>

@@ -10,7 +10,7 @@ const DisplayProduct = ({ data }) => {
 
 <div className="flex flex-col justify-center items-center min-h-full" >
 
-<div className="border-[1px] border-[#afafb7] rounded-md flex-1 " >
+<div className="border-[1px] border-[#afafb7] rounded-md w-full flex-1 " >
     {/* image */}
     <div>
         <img className="w-full h-80" src={photoURL} />

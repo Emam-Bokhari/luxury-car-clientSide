@@ -5,7 +5,7 @@ import withAutoplay from 'react-awesome-slider/dist/autoplay';
 const Slider = () => {
     const AutoplaySlider = withAutoplay(AwesomeSlider);
     return (
-        <div className="my-10" >
+        <div className="my-10 max-w-screen-xl mx-auto px-8 md:px-16" >
 
             <AutoplaySlider play={true}
                 cancelOnInteraction={false}
