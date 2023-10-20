@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
-        <div className="max-w-screen-xl mx-auto px-8 md:px-16 " >
+        <div className="max-w-screen-xl mx-auto px-8 md:px-16 my-10" >
 <footer className="footer p-10 bg-[#2b3440] text-white">
   <div>
     <img className="w-32" src="https://i.ibb.co/GkMR3wX/logo.png"  />
