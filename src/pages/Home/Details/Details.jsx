@@ -1,5 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import {AiOutlineShoppingCart} from "react-icons/ai"
+import toast from "react-hot-toast";
 const Details = () => {
 
     const detailsData = useLoaderData()
@@ -21,9 +22,9 @@ const Details = () => {
     })
     .then(res=>res.json())
     .then(data=>{
-        console.log(data);
+        // console.log(data);
         if(data.insertedId){
-            alert('product add successfully!')
+            toast.success('Product added to cart successfully.')
         }
     })
     // console.log(addToCart);

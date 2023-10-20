@@ -3,35 +3,37 @@ import { Link } from "react-router-dom";
 const Footer = () => {
     return (
         <div className="max-w-screen-xl mx-auto px-8 md:px-16 " >
-          <footer className="footer p-10 bg-[#272530] text-white">
-  <aside>
-  <img className="w-24" src="https://i.ibb.co/GkMR3wX/logo.png" alt="" />
-    <p>Luxury Car<br/> Choice Your Best Car</p>
-  </aside> 
-
-  {/* Site Links */}
+<footer className="footer p-10 bg-[#2b3440] text-white">
+  <div>
+    <img className="w-32" src="https://i.ibb.co/GkMR3wX/logo.png"  />
+    <h2 className="text-[#ff5a25] font-bold text-xl" >Choose Your Best Car</h2>
+    <h2 className="text-sm text-[#ff5a25] tracking-wider " >luxurycar.com</h2>
+  </div> 
   <nav>
     <header className="footer-title">Site Links</header> 
-    <Link to="/" className="link link-hover">Home</Link> 
-    <Link to="#" className="link link-hover">About Us</Link> 
-    <Link to="/addProduct" className="link link-hover">Add Product</Link> 
-    <Link to="/myCart" className="link link-hover">My Cart</Link> 
-  </nav> 
-
-  {/* Social Links */}
-  <nav>
-    <header className="footer-title">Social Links</header> 
-    <Link to="#" className="link link-hover">Facebook</Link> 
-    <Link to="#" className="link link-hover">Instagram</Link> 
-    <Link to="#" className="link link-hover">Twitter</Link> 
-    <Link to="#" className="link link-hover">Linkedin</Link>
+    <Link className="link link-hover" to="/" >Home</Link>
+    <Link className="link link-hover" to="#" >About Us</Link>
+    <Link className="link link-hover" to="/addProduct" >Add Product</Link>
+    <Link className="link link-hover" to="/myCart" >My Cart</Link>
   </nav> 
   <nav>
     <header className="footer-title">Legal</header> 
-    <a className="link link-hover">Terms And Condition</a> 
-    <a className="link link-hover">Privacy policy</a> 
-    <a className="link link-hover">Cookies policy</a>
-  </nav>
+    <Link className="link link-hover">Terms </Link> 
+    <Link className="link link-hover">Privacy policy</Link> 
+    <Link className="link link-hover">Cookie policy</Link>
+  </nav> 
+  <form>
+    <header className="footer-title">Newsletter</header> 
+    <fieldset className="form-control ">
+      <label className="label">
+        <span className="label-text">Enter your email address</span>
+      </label> 
+      <div className="relative">
+        <input type="text" placeholder="abc@site.com" className="input input-bordered  pr-16" /> 
+        <button className="btn btn-error absolute top-0 right-0 rounded-l-none placeholder:text-black">Subscribe</button>
+      </div>
+    </fieldset>
+  </form>
 </footer>
         </div>
     );

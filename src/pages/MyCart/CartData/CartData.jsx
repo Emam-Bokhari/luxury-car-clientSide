@@ -1,4 +1,5 @@
 import PropTypes from "prop-types"
+import Swal from "sweetalert2";
 
 const CartData = ({ data, deleteCart }) => {
     // console.log(data);
@@ -6,22 +7,53 @@ const CartData = ({ data, deleteCart }) => {
     // console.log(_id);
     const handleDelete = (_id) => {
         console.log(_id, 'delete done');
-        fetch(`https://luxury-car-self.vercel.app/cart/${_id}`, {
-            method: 'DELETE'
+
+
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+
+                fetch(`https://luxury-car-self.vercel.app/cart/${_id}`, {
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        // console.log(data);
+                        if (data.deletedCount > 0) {
+                            Swal.fire(
+                                'Deleted!',
+                                'Your product has been deleted.',
+                                'success'
+
+                            )
+                            deleteCart(_id)
+                        }
+                    })
+
+
+
+
+
+
+            }
         })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                if(data.deletedCount>0){
-                    alert('Delete Successfull')
-                    deleteCart(_id)
-                }
-            })
+
+
+
+
     }
     return (
         <div>
 
-            <div className="flex items-center gap-10 my-5 text-left" >
+            <div className="flex md:items-center gap-2 md:gap-10 flex-wrap  my-5 text-left" >
 
 
                 <h2 className="text-xl" >&#x2022;</h2>
@@ -52,9 +84,9 @@ const CartData = ({ data, deleteCart }) => {
     );
 };
 
-CartData.propTypes={
-    data:PropTypes.object,
-    deleteCart:PropTypes.func
+CartData.propTypes = {
+    data: PropTypes.object,
+    deleteCart: PropTypes.func
 }
 
 export default CartData;

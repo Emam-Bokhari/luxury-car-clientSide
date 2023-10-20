@@ -17,7 +17,7 @@ const DisplayProduct = ({ data }) => {
     </div>
 
     {/* text */}
-    <div className="h-36" >
+    <div className="h-40" >
         <div className="px-4 space-y-1" >
         {/* name and brand name */}
         <div className="mt-5 flex gap-5  text-lg text-[#afafb7] font-semibold "  >

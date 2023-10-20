@@ -9,11 +9,13 @@ import Login from "../pages/Login/Login";
 import SignUp from "../pages/SignUp/SignUp";
 import Update from "../pages/Update/Update";
 import PrivateRoute from './../PrivateRoute/PrivateRoute';
+import ErrorPage from "../ErrorPage/ErrorPage";
 
 const Router = createBrowserRouter([
     {
         path: "/",
         element: <MainLayout />,
+        errorElement: <ErrorPage />,
         children: [
             {
                 path: "/",
@@ -49,7 +51,7 @@ const Router = createBrowserRouter([
             },
             {
                 path: "/update/:id",
-                loader:({params})=>fetch(`https://luxury-car-self.vercel.app/products/${params.id}`),
+                loader: ({ params }) => fetch(`https://luxury-car-self.vercel.app/products/${params.id}`),
                 element: <PrivateRoute><Update /></PrivateRoute>
             }
         ]

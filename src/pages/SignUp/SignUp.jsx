@@ -49,7 +49,7 @@ const SignUp = () => {
             {/* Start signup  */}
             <div className="flex justify-center items-center  lg:h-[70vh]" >
 
-                <div className="w-[350px] h-[550px]  border-[1px] border-[#ff5a25] rounded-sm" >
+                <div className="w-[300px] h-[550px]  border-[1px] border-[#ff5a25] rounded-sm" >
                     <h2 className="text-xl font-semibold text-center mt-5 text-[#ff5a25]" >SignUp your account</h2>
 
                     <div className="px-5 my-5">

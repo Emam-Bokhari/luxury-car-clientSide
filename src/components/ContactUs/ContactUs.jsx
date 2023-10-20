@@ -69,7 +69,7 @@ const ContactUs = () => {
 
                                     {/* submit button */}
                                     <div className=" text-center" >
-                                        <input type="submit" value="Submit" className="bg-[#403F3F] hover:bg-[#272530] transition-all delay-100 px-10 py-2 rounded-sm text-white font-semibold text-base cursor-pointer" />
+                                        <input type="submit" value="Submit" className="bg-[#2b3440] hover:bg-[#272530] transition-all delay-100 px-10 py-2 rounded-sm text-white font-semibold text-base cursor-pointer w-full" />
                                     </div>
 
 

@@ -1,3 +1,4 @@
+import toast from "react-hot-toast";
 import { useLoaderData } from "react-router-dom";
 
 const Update = () => {
@@ -21,7 +22,7 @@ const Update = () => {
         // console.log(update); 
         
 
-        fetch(`https://luxury-car-self.vercel.app/products/${_id}`,{
+        fetch(`https://luxury-car-self.vercel.app/productsData/${_id}`,{
             method:'PUT',
             headers:{
                 'content-type':'application/json'
@@ -31,6 +32,9 @@ const Update = () => {
         .then(res=>res.json())
         .then(data=>{
             console.log(data);
+            if(data.modifiedCount>0){
+                toast.success('Product Updated Successfully!')
+            }
         })
     }
 
@@ -87,8 +91,8 @@ const Update = () => {
                     </div>
 
                     {/* submit button */}
-                    <div className="my-5" >
-                        <input className="bg-[#ff5a25] w-full rounded-sm p-2 text-white font-simibold text-xl" type="submit" value="Submit" />
+                    <div className="my-5 " >
+                        <input className="bg-[#ff5a25] w-full rounded-sm p-2 text-white font-simibold text-xl cursor-pointer" type="submit" value="Submit" />
                     </div>
                 </form>
 
