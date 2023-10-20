@@ -8,23 +8,21 @@
 
 - Using React Router for handling navigation and rendering different components based on the URL path.
 - Defined various routes, including the home page, product details, adding a product, the shopping cart, login, sign-up, and update product details.
-- Also implemented a PrivateRoute component to protect certain routes, ensuring that only authenticated users can access them.
+- Also implemented a PrivateRoute to protect certain routes, ensuring that only authenticated users can access them.
 
 ### 2. Authentication
 
-- AuthProvider component that wraps your entire application and provides authentication-related context.
-- The AuthProvider component manages user authentication state and provides functions for user registration, login, Google sign-in, and logout.
 - Using Firebase for authentication and Firebase's auth module to manage user authentication.
 
 ### 3. User Login
 
-- The Login component is used for user login. Users can enter their email and password or sign in using Google.
+- Users can enter their email and password or sign in using Google.
 - Password visibility can be toggled with an eye icon.
 - If the login is successful, the user is redirected to the home page. If it fails, an error message is displayed using the toast library.
 
 ### 4. User Registration
 
-- The SignUp component is used for user registration. Users can enter their name, email, password, and optionally a photo URL.
+- The SignUp is used for user registration. Users can enter their name, email, password, and optionally a photo URL.
 - Users need to accept terms and conditions before registering.
 - Password validation checks are performed, and error messages are displayed for any issues.
 - If registration is successful, the user is redirected to the home page. If it fails, an error message is displayed using the toast library.
