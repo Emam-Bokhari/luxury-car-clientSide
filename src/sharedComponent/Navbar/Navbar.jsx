@@ -54,6 +54,8 @@ const Navbar = () => {
                     >
                         My Cart
                     </NavLink></li>
+
+                 
                 </ul>
 
                 {/* button */}
