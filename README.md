@@ -60,3 +60,18 @@
 
 - Our project's design is responsive, adapting to different screen sizes ( desktop, tablet and mobile).
 - Ensures a consistent and user-friendly experience across devices.
+
+### 1. Client Side:
+
+- React
+- React Router Dom
+- Tailwind CSS
+- Firebase (Authentication)
+- JWT
+- React Hot Toast
+- Daisy UI
+
+### 2. Backend:
+
+- Express js
+- MongoDB (Database)
